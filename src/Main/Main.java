@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
 public class Main {
     public static void main(String[] args) throws SQLException {
 
-        LogAcess logAcess1 = new LogAcess("Caio", "Acess", LocalDateTime.now(), "192.168.0.1");
+        LogAcess logAcess1 = new LogAcess("Caio", "Exit", LocalDateTime.now(), "192.168.0.1");
         LogAcessDAO logAcessDAO = new LogAcessDAO();
-        //logAcessDAO.registerLog(logAcess1);
+        logAcessDAO.registerLog(logAcess1);
         logAcessDAO.logAcessListFunction();
 
 

@@ -1,0 +1,34 @@
+@startuml
+class Main.Main {
++ {static} void main(String[])
+}
+
+class Factory.ConnectionFactory {
++ DataSource dataSource
++ Connection getConnection()
+}
+
+
+class Model.LogAcess {
+- Integer id
+- String user
+- String action
+- LocalDateTime dateTime
+- String ip
++ String getUser()
++ String getAction()
++ LocalDateTime getDateTime()
++ String getIp()
++ void setId(Integer)
+}
+
+
+class LogAcessDAO.LogAcessDAO {
+~ List<LogAcess> logAcessList
++ void registerLog(LogAcess)
++ void deleteForId(int)
++ void logAcessListFunction()
+}
+
+
+@enduml

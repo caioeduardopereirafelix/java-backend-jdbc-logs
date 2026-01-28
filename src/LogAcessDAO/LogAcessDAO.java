@@ -11,8 +11,6 @@ import java.util.List;
 
 public class LogAcessDAO{
 
-    List<LogAcess> logAcessList = new ArrayList<>();
-
     public void registerLog(LogAcess logUser) throws SQLException {
 
         try(Connection connection = new ConnectionFactory().getConnection()){
@@ -25,11 +23,6 @@ public class LogAcessDAO{
                 preparedStatement.setTimestamp(3, Timestamp.valueOf(logUser.getDateTime()));
                 preparedStatement.setString(4, logUser.getIp());
                 preparedStatement.executeUpdate();
-                try(ResultSet rst = preparedStatement.getGeneratedKeys()){
-                    while (rst.next()){
-                        logUser.setId(rst.getInt(1));
-                    }
-                }
 
             }
 
