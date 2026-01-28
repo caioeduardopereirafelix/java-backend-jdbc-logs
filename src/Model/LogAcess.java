@@ -18,4 +18,27 @@ public class LogAcess  {
         this.dateTime = dateTime;
         this.ip = ip;
     }
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+
+
 }
